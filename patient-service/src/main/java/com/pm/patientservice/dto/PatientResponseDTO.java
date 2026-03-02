@@ -1,6 +1,5 @@
 package com.pm.patientservice.dto;
 
-import java.time.LocalDate;
 import java.util.UUID;
 
 import lombok.AllArgsConstructor;
@@ -13,9 +12,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PatientResponseDTO {
-	private UUID id;
+	private String id;
 	private String name;
 	private String email;
 	private String address;
-	private LocalDate dateOfBirth;
+	private String dateOfBirth;
 }
