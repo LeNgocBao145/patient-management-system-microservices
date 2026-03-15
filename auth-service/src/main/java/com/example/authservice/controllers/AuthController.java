@@ -2,6 +2,7 @@ package com.example.authservice.controllers;
 
 import com.example.authservice.dto.LoginRequestDTO;
 import com.example.authservice.dto.LoginResponseDTO;
+import com.example.authservice.services.AuthService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,12 @@ import java.util.Optional;
 
 @RestController
 public class AuthController {
+    private final AuthService authService;
+
+    public AuthController(AuthService authService) {
+        this.authService = authService;
+    }
+
     @Operation(summary = "Authenticate user and return JWT token")
     @PostMapping("/login")
     public ResponseEntity<LoginResponseDTO> login(@RequestBody LoginRequestDTO loginRequestDTO) {
